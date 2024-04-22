@@ -56,5 +56,3 @@ function jump() {
     jumpCount++;
   },10);
 }
-
-jumpcount = jumpCount + 1
