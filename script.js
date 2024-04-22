@@ -19,7 +19,7 @@ hole.addEventListener('animationiteration', animIterationHandler);
 setInterval(function () {
   const characterTop =
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-  if (jumping === 0) {
+    if (jumping === 0) {
     character.style.top = (characterTop + 1) + "px";
   };
 }, 10);
@@ -28,9 +28,16 @@ function jump() {
   jumping = 1;
   let jumpCount = 0;
   let jumpInterval = setInterval(function () {
-      const characterTop =
-    parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-character.style.top = (characterTop - 5) + "px";
+    const characterTop =
+      parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    if (characterTop > 6) {
+      character.style.top = (characterTop - 5) + "px";
+    }
+    if (jumpCount > 10) {
+      clearInterval(jumpInterval);
+      jumping = 0;
+      jumpCount = 0;
+    }
     jumpCount++;
   },10);
 }
