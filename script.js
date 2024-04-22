@@ -27,4 +27,10 @@ setInterval(function () {
 function jump() {
   jumping = 1;
   let jumpCount = 0;
+  let jumpInterval = setInterval(function () {
+      const characterTop =
+    parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+character.style.top = (characterTop - 5) + "px";
+    jumpCount++;
+  },10);
 }
