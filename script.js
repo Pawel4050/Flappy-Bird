@@ -24,6 +24,7 @@ setInterval(function () {
   };
   if(characterTop>480) {
     alert("Game over");
+    character.style.top = 100 + "px";
   }
 }, 10);
 
