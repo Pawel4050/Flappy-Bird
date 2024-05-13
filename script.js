@@ -24,9 +24,13 @@ setInterval(function () {
     if (jumping === 0) {
     character.style.top = (characterTop + 1) + "px";
   };
+  let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top "));
+
   if(characterTop>480) {
     alert("Game over. Score: "+counter);
     character.style.top = 100 + "px";
+    counter = 0;
   }
 }, 10);
 
