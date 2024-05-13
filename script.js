@@ -22,24 +22,13 @@ setInterval(function () {
     if (jumping === 0) {
     character.style.top = (characterTop + 1) + "px";
   };
+  if(characterTop>480) {
+    alert("Game over");
+  }
 }, 10);
-
-
-hole.addEventListener('animationiteration', losowanie);
-setInterval(function () {
-    const characterTop =
-    parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    if (jumping === 0) {
-        character.style.top = (characterTop + 1) +"px;"
-    };
-}, 10);
-
-
-
 
 function jump() {
   jumping = 1;
-
   let jumpCount = 0;
 
   let jumpInterval = setInterval(function () {
