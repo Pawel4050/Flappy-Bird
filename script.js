@@ -2,6 +2,7 @@ const block = document.getElementById("block");
 const hole = document.getElementById("hole");
 const character = document.getElementById("character");
 let jumping = 0;
+let counter = 0;
 
 
 // hole.addEventListener('animationiteration', () => {
@@ -12,6 +13,7 @@ let jumping = 0;
 function animIterationHandler() {
   const random = -((Math.random() * 300) + 150);
   hole.style.top = random + "px";
+  counter++
 }
 
 hole.addEventListener('animationiteration', animIterationHandler);
@@ -23,7 +25,7 @@ setInterval(function () {
     character.style.top = (characterTop + 1) + "px";
   };
   if(characterTop>480) {
-    alert("Game over");
+    alert("Game over. Score: "+counter);
     character.style.top = 100 + "px";
   }
 }, 10);
